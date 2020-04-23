@@ -43,9 +43,9 @@
         </div>
         </div>
     </nav>
-    <div id="loginModal" class="modal fade" role="dialog">
+
+   <div id="loginModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
-            <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Login </h4>
@@ -78,7 +78,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> 
+
+    
+
+
     <header class="jumbotron">
         <div class="container">
             <div class="row row-header">
@@ -90,13 +94,93 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-10 col-sm justify-content-center">
-                    <a role="button" class="btn btn-block nav-link btn-warning"
-                        data-toggle="tooltip" data-html="true"  title="Or Call us at <br> <strong> +852 12345678 </strong>"
-                        data-placement="bottom" href="#reserveform">Reserve Table</a>
+                    <a role="button" class="btn nav-link btn-warning" id="xx" data-toggle="modal" data-target="#table">Reserve Table</a>
                 </div>
             </div>
         </div>
     </header>
+
+
+    <div id="table" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Reserve a Table </h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="container">
+                            <div class="form-group row">
+                                <label class="col-md-4 col-form-label" for="guests"> Number of Guests </label>
+
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" id="one" name="one" value="one guests">
+                                            <label for="one">1</label>
+                                        </div>
+
+
+                                        <div class="form-check form-check-inline">
+                                                <input type="radio" id="two" name="two" value="two guests">
+                                                <label for="two">2</label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                                <input type="radio" id="three" name="three" value="three guests">
+                                                <label for="three">3</label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" id="four" name="four" value="four guests">
+                                            <label for="four">4</label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" id="five" name="five" value="five guests">
+                                            <label for="five">5</label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" id="six" name="six" value="six guests">
+                                            <label for="six">6</label>
+                                        </div> 
+                                    </div> <!--form group row-->  
+
+                                <div class="form-group row"> 
+                                    <label class="col-md-4 col-form-label" for="section"> Section </label>
+                                        <div class="btn-group" role="group" id="bb">
+                        
+                                            <a role="button" class="btn active btn-success">Non-Smoking</a>
+                        
+                                            <a role="button" class="btn btn-danger"> Smoking</a>
+                                    </div>
+                                </div> <!--form group row-->
+                            
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label" for="date and time"> Date and Time </label>
+                                    <div class="col-7 col-md-3">
+                                        <input type="text" class="form-control" id="date" name="date" placeholder="Date">
+                                    </div>
+                                    <div class="col-7 col-md-3">
+                                        <input type="text" class="form-control" id="time" name="time" placeholder="Time">
+                                    </div>
+                                </div> 
+
+                                <div class="form-group row">
+                                    <div class="col-7 col-md-3">
+                                    <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn btn-primary btn-sm ml-1">Reserve</button>  
+                                    </div>      
+                                </div> 
+                        </div><!--container-->
+                            
+                    </form>
+                </div> <!--modal body-->
+            </div>
+        </div>
+    </div>
+
 
     <div class="container">
         <div class="row row-content">
@@ -153,13 +237,16 @@
                 <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                     <span class="carousel-control-next-icon"></span>
                 </a>
+                <button class="btn btn-danger btn-sm" id="carouselButton">
+                    <span id="carousel-button-icon" class="fa fa-pause"></span>
+                </button>
              </div> <!--list box-->
         </div> <!--carousel-->
     </div> <!--col-->
-</div><!--row content-->
-</div> <!--div container-->
+</div>
+</div>
     
-<div class="container" id="reserve">
+<!--<div class="container" id="reserve">
     <div class="col-6 col-2">
     <div class="card">
         <h3 class="card-header bg-warning text-white">Reserve a Table</h3>
@@ -200,7 +287,7 @@
                         <input type="radio" id="six" name="six" value="six guests">
                         <label for="six">6</label>
                         </div>  
-                    </div> <!-- form row-->
+                    </div> 
 
                     <div class="form-group row">
                     <label class="col-md-4 col-form-label" for="date and time"> Date and Time </label>
@@ -210,21 +297,22 @@
                     <div class="col-7 col-md-3">
                         <input type="text" class="form-control" id="time" name="time" placeholder="Time">
                     </div>
-                </div> <!-- form date and time-->
+                </div> 
 
                 <div class="form-group row">
                     <div class="offset-md-2 col-md-10">
                         <button type="submit" class="btn btn-primary">Reserve</button>
                     </div>
 
-                    </div> <!-- form button -->
-                    </div> <!-- form container-->
+                    </div> 
+                    </div> 
                 </form>
-            </div> <!--outside form-->
+            </div> 
             </dl>
         </div>
     </div>
-    </div><!-- Reserve table -->
+    </div>
+-->
 
     <footer class="footer">
         <div class="container">
@@ -285,10 +373,21 @@
  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
  <script>
-    $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip();
-    });
+    $("#carouselButton").click(function(){
+                if ($("#carouselButton").children("span").hasClass('fa-pause')) {
+                    $("#mycarousel").carousel('pause');
+                    $("#carouselButton").children("span").removeClass('fa-pause');
+                    $("#carouselButton").children("span").addClass('fa-play');
+                }
+                else if ($("#carouselButton").children("span").hasClass('fa-play')){
+                    $("#mycarousel").carousel('cycle');
+                    $("#carouselButton").children("span").removeClass('fa-play');
+                    $("#carouselButton").children("span").addClass('fa-pause');                    
+                }
+            });
 </script>
+
+
 </body>
 
 </html>
